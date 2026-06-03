@@ -21,6 +21,9 @@ class Assets implements ModuleInterface {
 	use Module;
 	use GetAssetInfo;
 
+	private const ASSETS_DIST_PATH = CAMALOTE_WP_EDITORIAL_CONTROL_PATH . 'dist/';
+	private const ASSETS_FALLBACK_VERSION = CAMALOTE_WP_EDITORIAL_CONTROL_VERSION;
+
 	/**
 	 * Can this module be registered?
 	 *
@@ -37,8 +40,8 @@ class Assets implements ModuleInterface {
 	 */
 	public function register() {
 		$this->setup_asset_vars(
-			dist_path: CAMALOTEWP_EDITORIAL_CONTROL_PATH . 'dist/',
-			fallback_version: CAMALOTEWP_EDITORIAL_CONTROL_VERSION
+			dist_path: self::ASSETS_DIST_PATH,
+			fallback_version: self::ASSETS_FALLBACK_VERSION
 		);
 
 		$this->register_admin_assets();
@@ -78,10 +81,10 @@ class Assets implements ModuleInterface {
 	 *
 	 * @return void
 	 */
-	public function admin_block_editor_scripts() {		
+	public function admin_block_editor_scripts() {
 		wp_enqueue_script(
-			'camalotewp_editorial_control_admin',
-			CAMALOTEWP_EDITORIAL_CONTROL_URL . 'dist/js/block-filters.js',
+			CAMALOTE_WP_EDITORIAL_CONTROL_SLUG . '_block-filters',
+			CAMALOTE_WP_EDITORIAL_CONTROL_URL . 'dist/js/block-filters.js',
 			$this->get_asset_info( 'block-filters', 'dependencies' ),
 			$this->get_asset_info( 'block-filters', 'version' ),
 			true

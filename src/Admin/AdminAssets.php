@@ -37,8 +37,8 @@ class AdminAssets implements ModuleInterface {
 	 */
 	public function register() {
 		$this->setup_asset_vars(
-			dist_path: CAMALOTEWP_EDITORIAL_CONTROL_PATH . 'dist/',
-			fallback_version: CAMALOTEWP_EDITORIAL_CONTROL_VERSION
+			dist_path: CAMALOTE_WP_EDITORIAL_CONTROL_PATH . 'dist/',
+			fallback_version: CAMALOTE_WP_EDITORIAL_CONTROL_VERSION
 		);
 
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ] );
@@ -54,11 +54,10 @@ class AdminAssets implements ModuleInterface {
 		$screen = get_current_screen();
 		
 		if ( $screen && 'toplevel_page_editorial-control-page' === $screen->id ) {
-			$handle = 'camalotewp_editorial_control_admin_settings_page';
 			
 			wp_enqueue_script(
-				$handle,
-				CAMALOTEWP_EDITORIAL_CONTROL_URL . 'dist/js/settings/admin-settings-page.js',
+				CAMALOTE_WP_EDITORIAL_CONTROL_SLUG . '_admin-settings-page',
+				CAMALOTE_WP_EDITORIAL_CONTROL_URL . 'dist/js/settings/admin-settings-page.js',
 				$this->get_asset_info( 'settings/admin-settings-page', 'dependencies' ),
 				$this->get_asset_info( 'settings/admin-settings-page', 'version' ),
 				true
@@ -66,9 +65,9 @@ class AdminAssets implements ModuleInterface {
 
 			// Set up JavaScript translations
 			wp_set_script_translations(
-				$handle,
-				'camalotewp-editorial-control',
-				CAMALOTEWP_EDITORIAL_CONTROL_PATH . 'languages'
+				CAMALOTE_WP_EDITORIAL_CONTROL_SLUG . '_admin-settings-page',
+				'camalote-wp-editorial-control',
+				CAMALOTE_WP_EDITORIAL_CONTROL_PATH . 'languages'
 			);
 		}
 
@@ -87,8 +86,8 @@ class AdminAssets implements ModuleInterface {
 			$deps = [];
 	
 			wp_enqueue_style(
-				'camalotewp_editorial_controlfotoperiodismo_admin_page_styles',
-				CAMALOTEWP_EDITORIAL_CONTROL_URL . 'dist/css/settings/admin-settings-page.css', // Note the corrected file name
+				CAMALOTE_WP_EDITORIAL_CONTROL_SLUG . '_admin-settings-page-styles',
+				CAMALOTE_WP_EDITORIAL_CONTROL_URL . 'dist/css/settings/admin-settings-page.css', // Note the corrected file name
 				$deps,
 				$this->get_asset_info( 'settings/admin-settings-page', 'version' ),
 			);

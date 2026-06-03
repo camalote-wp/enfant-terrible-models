@@ -30,15 +30,13 @@ This WordPress plugin provides an editorial control system. Its primary function
 
 #### Download a release
 
-- Navigate to [Releases](https://github.com/camalote-wp/cmlt-editorial-control/releases)
+- Navigate to [Releases](https://github.com/camalote-wp/editorial-control/releases)
 
 - Install via WordPress backend or copy into `wp-content/plugins/`.
 
 #### From source
 
-- Clone the repository:  `git clone https://github.com/camalote-wp/cmlt-editorial-control.git`
-
-- Navigate to the plugin directory: `cd cmlt-editorial-control`
+- Clone the repository:  `git clone https://github.com/camalote-wp/editorial-control.git`
 
 - Install PHP dependencies: `composer install` 
 

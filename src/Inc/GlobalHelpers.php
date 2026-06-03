@@ -13,7 +13,7 @@ use CamaloteWP\EditorialControl\Admin\AdminSettings;
  *
  * @return AdminSettings|null
  */
-function _camalotewp_editorial_control_admin_settings(): ?AdminSettings {
+function _camalote_wp_editorial_control_admin_settings(): ?AdminSettings {
     return ModuleInitialization::get_module(AdminSettings::class) ?: null;
 }
 
@@ -21,7 +21,7 @@ function _camalotewp_editorial_control_admin_settings(): ?AdminSettings {
  * This helper is to deal with Oxygen shenanigans,
  * because it expects the value to be an string.
  */
-function _camalotewp_editorial_control_format_id( $id, $format = 'array' ) {
+function _camalote_wp_editorial_control_format_id( $id, $format = 'array' ) {
     switch ( $format ) {
         case 'string':
             return (string) $id;
@@ -37,16 +37,16 @@ function _camalotewp_editorial_control_format_id( $id, $format = 'array' ) {
  *
  * @return array|null
  */
-function camalotewp_editorial_control_settings(): ?array {
-    $admin_settings = _camalotewp_editorial_control_admin_settings();
+function camalote_wp_editorial_control_settings(): ?array {
+    $admin_settings = _camalote_wp_editorial_control_admin_settings();
     return $admin_settings ? $admin_settings->get_settings() : null;
 }
 
 /**
  * Does the cover have a primary article?
  */
-function camalotewp_editorial_control_has_primary_article(): bool {
-    $settings = camalotewp_editorial_control_settings();
+function camalote_wp_editorial_control_has_primary_article(): bool {
+    $settings = camalote_wp_editorial_control_settings();
     return ! empty( $settings['cover']['articles']['article_primary'] );
 }
 
@@ -56,10 +56,10 @@ function camalotewp_editorial_control_has_primary_article(): bool {
  * @param string $format Return format: 'array' (default), 'string', or 'int'
  * @return array|string|int|null
  */
-function camalotewp_editorial_control_get_primary_article_id(string $format = 'array'): array|string|int|null {
-    $settings = camalotewp_editorial_control_settings();
+function camalote_wp_editorial_control_get_primary_article_id(string $format = 'array'): array|string|int|null {
+    $settings = camalote_wp_editorial_control_settings();
     $id = $settings['cover']['articles']['article_primary'][0]['id'] ?? null;
-    return _camalotewp_editorial_control_format_id( $id, $format );
+    return _camalote_wp_editorial_control_format_id( $id, $format );
 }
 
 /**
@@ -67,10 +67,10 @@ function camalotewp_editorial_control_get_primary_article_id(string $format = 'a
  *
  * @return array|string|int|null
  */
-function camalotewp_editorial_control_get_secondary_article_id( string $format = 'array' ): array|string|int|null {
-    $settings = camalotewp_editorial_control_settings();
+function camalote_wp_editorial_control_get_secondary_article_id( string $format = 'array' ): array|string|int|null {
+    $settings = camalote_wp_editorial_control_settings();
     $id = $settings['cover']['articles']['article_secondary'][0]['id'] ?? null;
-    return _camalotewp_editorial_control_format_id( $id, $format );
+    return _camalote_wp_editorial_control_format_id( $id, $format );
 }
 
 /**
@@ -78,10 +78,10 @@ function camalotewp_editorial_control_get_secondary_article_id( string $format =
  *
  * @return array|string|int|null
  */
-function camalotewp_editorial_control_get_tertiary_article_id( string $format = 'array' ): array|string|int|null {
-    $settings = camalotewp_editorial_control_settings();
+function camalote_wp_editorial_control_get_tertiary_article_id( string $format = 'array' ): array|string|int|null {
+    $settings = camalote_wp_editorial_control_settings();
     $id = $settings['cover']['articles']['article_tertiary'][0]['id'] ?? null;
-    return _camalotewp_editorial_control_format_id( $id, $format );
+    return _camalote_wp_editorial_control_format_id( $id, $format );
 }
 
 
@@ -91,8 +91,8 @@ function camalotewp_editorial_control_get_tertiary_article_id( string $format = 
  * @param string $part One of 'title', 'url', or 'desc'.
  * @return string|null The requested content, or null if not set.
  */
-function camalotewp_editorial_control_get_audiovisual_content( string $part ): ?string {
-    $settings = camalotewp_editorial_control_settings();
+function camalote_wp_editorial_control_get_audiovisual_content( string $part ): ?string {
+    $settings = camalote_wp_editorial_control_settings();
     $audiovisual_part = $settings['cover']['audiovisual'][$part] ?? null;
     return $audiovisual_part;
 }

@@ -7,7 +7,7 @@ set -euo pipefail
 # Notes: Step-based logging for clarity in CI/CD
 # =============================================================================
 
-PLUGIN="cmlt-editorial-control"
+PLUGIN="camalote-wp-editorial-control"
 PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TMP_POT="$(mktemp)"
 IDENTIFIER="POTGEN"
@@ -58,7 +58,7 @@ generate_pot() {
   wp i18n make-pot "$PLUGIN_ROOT" "$TMP_POT" \
     --domain="$PLUGIN" \
     --package-name="CamaloteWP - Editorial Control" \
-    --headers='{"Report-Msgid-Bugs-To":"https://github.com/camalote-wp/cmlt-editorial-control/issues"}'
+    --headers='{"Report-Msgid-Bugs-To":"https://github.com/camalote-wp/editorial-control/issues"}'
 }
 
 finalize_pot() {

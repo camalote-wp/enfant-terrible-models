@@ -54,7 +54,7 @@ export const useSettingsStore = create<SettingsStore>()(
         loadSettings: async () => {
           set({ loading: true });
           try {
-            const data = await apiFetch({ path: '/camalotewp-editorial-control/v1/settings' });
+            const data = await apiFetch({ path: '/camalote-wp/editorial-control/v1/settings' });
             const parsed = settingsSchema.parse(data);
             set({
               settings: parsed,
@@ -76,7 +76,7 @@ export const useSettingsStore = create<SettingsStore>()(
           set({ saving: true });
           try {
             const saved = await apiFetch({
-              path: '/camalotewp-editorial-control/v1/settings',
+              path: '/camalote-wp/editorial-control/v1/settings',
               method: 'PATCH',
               data: get().settings,
             });
@@ -130,7 +130,7 @@ export const useSettingsStore = create<SettingsStore>()(
       };
     },
     {
-      name: 'camalotewp-editorial-control-form-draft',
+      name: 'camalote-wp-editorial-control-form-draft',
       partialize: (state) => ({ settings: state.settings }),
     }
   )

@@ -30,8 +30,8 @@ class AdminPage implements ModuleInterface {
 
 	public function __construct() {
 		$args       = [
-			'page_title' => __( 'Editorial Control', 'camalotewp-editorial-control' ),
-			'menu_title' => __( 'Editorial Control', 'camalotewp-editorial-control' ),
+			'page_title' => __( 'Editorial Control', CAMALOTE_WP_EDITORIAL_CONTROL_SLUG ),
+			'menu_title' => __( 'Editorial Control', CAMALOTE_WP_EDITORIAL_CONTROL_SLUG ),
 			'capability' => 'manage_options',
 			'menu_slug'  => 'editorial-control-page',
 			'icon'       => 'dashicons-admin-generic',
@@ -52,8 +52,8 @@ class AdminPage implements ModuleInterface {
 	 */
 	public function register() {
 		$this->setup_asset_vars(
-			dist_path: CAMALOTEWP_EDITORIAL_CONTROL_DIST_PATH,
-			fallback_version: CAMALOTEWP_EDITORIAL_CONTROL_VERSION
+			dist_path: CAMALOTE_WP_EDITORIAL_CONTROL_DIST_PATH,
+			fallback_version: CAMALOTE_WP_EDITORIAL_CONTROL_VERSION
 		);
 
 		add_action( 'admin_menu', [ $this, 'register_admin_menu' ], 10 );

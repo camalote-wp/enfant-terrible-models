@@ -1,9 +1,9 @@
 {
-  "name": "camalote-wp/cmlt-editorial-control",
+  "name": "camalote-wp/editorial-control",
   "description": "Plugin for editorial control",
   "license": "MIT",
   "type": "wordpress-plugin",
-  "homepage": "https://github.com/camalote-wp/cmlt-editorial-control",
+  "homepage": "https://github.com/camalote-wp/editorial-control",
   "authors": [
     {
       "name": "Martín García"
