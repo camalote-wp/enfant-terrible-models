@@ -1,14 +1,14 @@
-# Revista Posidonia - Editorial Control
+# CamaloteWP - Editorial Control
 
 This is a WordPress plugin designed for editorial control.
 
 ## Overview
 
-This WordPress plugin provides an editorial control system for the Revista Posidonia website. Its primary function is to create a dedicated settings page within the WordPress admin dashboard, where users can manage and configure various custom-made features and settings. This page is built using React, providing a dynamic and interactive user interface, while a REST API endpoint is registered on the PHP side to facilitate seamless data exchange between the frontend and the server.
+This WordPress plugin provides an editorial control system. Its primary function is to create a dedicated settings page within the WordPress admin dashboard, where users can manage and configure various custom-made features and settings. This page is built using React, providing a dynamic and interactive user interface, while a REST API endpoint is registered on the PHP side to facilitate seamless data exchange between the frontend and the server.
 
 ## Features
 
-- Editorial Control: Manages a custom editorial workflow for content on Revista Posidonia.
+- Editorial Control: Manages a custom editorial workflow for content.
 
 - Settings Page: Provides a dedicated administration page built with React for managing custom features and settings.
 
@@ -30,15 +30,15 @@ This WordPress plugin provides an editorial control system for the Revista Posid
 
 #### Download a release
 
-- Navigate to [Releases](https://github.com/tingeka/revistaposidonia-editorial-control/releases)
+- Navigate to [Releases](https://github.com/camalote-wp/cmlt-editorial-control/releases)
 
 - Install via WordPress backend or copy into `wp-content/plugins/`.
 
 #### From source
 
-- Clone the repository:  `git clone https://github.com/tingeka/revistaposidonia-editorial-control.git`
+- Clone the repository:  `git clone https://github.com/camalote-wp/cmlt-editorial-control.git`
 
-- Navigate to the plugin directory: `cd revistaposidonia-editorial-control`
+- Navigate to the plugin directory: `cd cmlt-editorial-control`
 
 - Install PHP dependencies: `composer install` 
 

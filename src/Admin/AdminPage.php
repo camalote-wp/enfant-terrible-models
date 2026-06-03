@@ -2,19 +2,19 @@
 /**
  * Gutenberg Blocks setup
  *
- * @package RevistaPosidonia\EditorialControl\Admin
+ * @package CamaloteWP\EditorialControl\Admin
  */
 
-namespace RevistaPosidonia\EditorialControl\Admin;
+namespace CamaloteWP\EditorialControl\Admin;
 
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\Assets\GetAssetInfo;
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\Module;
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\ModuleInterface;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\Assets\GetAssetInfo;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\Module;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\ModuleInterface;
 
 /**
  * AdminPage module.
  *
- * @package RevistaPosidonia\EditorialControl\Admin
+ * @package CamaloteWP\EditorialControl\Admin
  */
 class AdminPage implements ModuleInterface {
 
@@ -30,8 +30,8 @@ class AdminPage implements ModuleInterface {
 
 	public function __construct() {
 		$args       = [
-			'page_title' => __( 'Editorial Control', 'revistaposidonia-editorial-control' ),
-			'menu_title' => __( 'Editorial Control', 'revistaposidonia-editorial-control' ),
+			'page_title' => __( 'Editorial Control', 'camalotewp-editorial-control' ),
+			'menu_title' => __( 'Editorial Control', 'camalotewp-editorial-control' ),
 			'capability' => 'manage_options',
 			'menu_slug'  => 'editorial-control-page',
 			'icon'       => 'dashicons-admin-generic',
@@ -52,8 +52,8 @@ class AdminPage implements ModuleInterface {
 	 */
 	public function register() {
 		$this->setup_asset_vars(
-			dist_path: REVISTAPOSIDONIA_EDITORIAL_CONTROL_DIST_PATH,
-			fallback_version: REVISTAPOSIDONIA_EDITORIAL_CONTROL_VERSION
+			dist_path: CAMALOTEWP_EDITORIAL_CONTROL_DIST_PATH,
+			fallback_version: CAMALOTEWP_EDITORIAL_CONTROL_VERSION
 		);
 
 		add_action( 'admin_menu', [ $this, 'register_admin_menu' ], 10 );

@@ -5,16 +5,16 @@
  * Provides methods to create and configure Monolog logger instances
  * with plugin-specific and global handlers.
  *
- * @package RevistaPosidonia\EditorialControl
+ * @package CamaloteWP\EditorialControl
  */
 
-namespace RevistaPosidonia\EditorialControl\Inc;
+namespace CamaloteWP\EditorialControl\Inc;
 
-use RevistaPosidonia\EditorialControl\Vendor\Monolog\Logger;
-use RevistaPosidonia\EditorialControl\Vendor\Monolog\Handler\StreamHandler;
-use RevistaPosidonia\EditorialControl\Vendor\Monolog\Handler\ErrorLogHandler;
-use RevistaPosidonia\EditorialControl\Vendor\Monolog\Processor\ProcessorInterface;
-use RevistaPosidonia\EditorialControl\Vendor\Monolog\Formatter\LineFormatter;
+use CamaloteWP\EditorialControl\Vendor\Monolog\Logger;
+use CamaloteWP\EditorialControl\Vendor\Monolog\Handler\StreamHandler;
+use CamaloteWP\EditorialControl\Vendor\Monolog\Handler\ErrorLogHandler;
+use CamaloteWP\EditorialControl\Vendor\Monolog\Processor\ProcessorInterface;
+use CamaloteWP\EditorialControl\Vendor\Monolog\Formatter\LineFormatter;
 
 /**
  * LoggerFactory is responsible for creating and managing Monolog logger instances

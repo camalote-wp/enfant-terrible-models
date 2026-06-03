@@ -2,18 +2,18 @@
 /**
  * Demo Post Type
  *
- * @package RevistaPosidonia\EditorialControl\Admin
+ * @package CamaloteWP\EditorialControl\Admin
  */
 
 declare(strict_types = 1);
 
-namespace RevistaPosidonia\EditorialControl\Admin;
+namespace CamaloteWP\EditorialControl\Admin;
 
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\ModuleInterface;
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\Module;
-use RevistaPosidonia\EditorialControl\Vendor\Monolog\Logger;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\ModuleInterface;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\Module;
+use CamaloteWP\EditorialControl\Vendor\Monolog\Logger;
 
-use RevistaPosidonia\EditorialControl\Inc\LoggerFactory;
+use CamaloteWP\EditorialControl\Inc\LoggerFactory;
 
 use WP_REST_Request;
 
@@ -50,7 +50,7 @@ class AdminSettings implements ModuleInterface {
      * Register the single option in wp_options
      */
     public function register_settings() {
-        register_setting('revistaposidonia_editorial_control', 'revistaposidonia_editorial_control', [
+        register_setting('camalotewp_editorial_control', 'camalotewp_editorial_control', [
             'type'              => 'object',
             'sanitize_callback' => [$this, 'sanitize_settings'],
             'default' => [
@@ -126,7 +126,7 @@ class AdminSettings implements ModuleInterface {
             ],
         ];
 
-        register_rest_route('revista-posidonia/v1', '/settings', [
+        register_rest_route('camalotewp-editorial-control/v1', '/settings', [
             [
                 'methods' => 'GET',
                 'callback' => [$this, 'get_settings'],
@@ -151,7 +151,7 @@ class AdminSettings implements ModuleInterface {
      * GET: Return all settings
      */
     public function get_settings() {
-        return get_option('revistaposidonia_editorial_control');
+        return get_option('camalotewp_editorial_control');
     }
 
     /**
@@ -161,7 +161,7 @@ class AdminSettings implements ModuleInterface {
         $params = $request->get_json_params();
         $sanitized = $this->sanitize_settings($params);
         
-        update_option('revistaposidonia_editorial_control', $sanitized);
+        update_option('camalotewp_editorial_control', $sanitized);
         
         return $sanitized;
     }
@@ -170,13 +170,13 @@ class AdminSettings implements ModuleInterface {
      * PATCH: Update settings with proper JSON Merge Patch semantics (RFC 7396)
      */
     public function patch_settings(WP_REST_Request $request) {
-        $current = get_option('revistaposidonia_editorial_control');
+        $current = get_option('camalotewp_editorial_control');
         $updates = $request->get_json_params();
 
         $merged = $this->json_merge_patch($current, $updates);
         $sanitized = $this->sanitize_settings($merged);
 
-        update_option('revistaposidonia_editorial_control', $sanitized);
+        update_option('camalotewp_editorial_control', $sanitized);
 
         return $sanitized;
     }

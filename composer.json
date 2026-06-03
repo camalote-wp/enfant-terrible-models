@@ -1,9 +1,9 @@
 {
-  "name": "revistaposidonia/editorial-control",
-  "description": "Plugin for editorial control in Revista Posidonia",
+  "name": "camalote-wp/cmlt-editorial-control",
+  "description": "Plugin for editorial control",
   "license": "MIT",
   "type": "wordpress-plugin",
-  "homepage": "https://github.com/tingeka/revistaposidonia-editorial-control",
+  "homepage": "https://github.com/camalote-wp/cmlt-editorial-control",
   "authors": [
     {
       "name": "Martín García"
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "RevistaPosidonia\\EditorialControl\\": "src/"
+      "CamaloteWP\\EditorialControl\\": "src/"
     }
   },
   "require-dev": {

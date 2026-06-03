@@ -21,7 +21,7 @@ phpContent = phpContent.replace(
 
 // Update PHP constant
 phpContent = phpContent.replace(
-  /(define\s*\(\s*['"]REVISTAPOSIDONIA_EDITORIAL_CONTROL_VERSION['"],\s*['"])[^'"]*(['"])/,
+  /(define\s*\(\s*['"]CAMALOTEWP_EDITORIAL_CONTROL_VERSION['"],\s*['"])[^'"]*(['"])/,
   `$1${newVersion}$2`
 );
 

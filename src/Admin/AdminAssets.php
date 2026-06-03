@@ -2,19 +2,19 @@
 /**
  * Admin Assets module.
  *
- * @package RevistaPosidonia\EditorialControl\Admin
+ * @package CamaloteWP\EditorialControl\Admin
  */
 
-namespace RevistaPosidonia\EditorialControl\Admin;
+namespace CamaloteWP\EditorialControl\Admin;
 
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\Assets\GetAssetInfo;
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\Module;
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\ModuleInterface;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\Assets\GetAssetInfo;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\Module;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\ModuleInterface;
 
 /**
  * Admin Assets module.
  *
- * @package RevistaPosidonia\EditorialControl\Admin
+ * @package CamaloteWP\EditorialControl\Admin
  */
 class AdminAssets implements ModuleInterface {
 
@@ -37,8 +37,8 @@ class AdminAssets implements ModuleInterface {
 	 */
 	public function register() {
 		$this->setup_asset_vars(
-			dist_path: REVISTAPOSIDONIA_EDITORIAL_CONTROL_PATH . 'dist/',
-			fallback_version: REVISTAPOSIDONIA_EDITORIAL_CONTROL_VERSION
+			dist_path: CAMALOTEWP_EDITORIAL_CONTROL_PATH . 'dist/',
+			fallback_version: CAMALOTEWP_EDITORIAL_CONTROL_VERSION
 		);
 
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ] );
@@ -54,11 +54,11 @@ class AdminAssets implements ModuleInterface {
 		$screen = get_current_screen();
 		
 		if ( $screen && 'toplevel_page_editorial-control-page' === $screen->id ) {
-			$handle = 'revistaposidonia_editorial_control_admin_settings_page';
+			$handle = 'camalotewp_editorial_control_admin_settings_page';
 			
 			wp_enqueue_script(
 				$handle,
-				REVISTAPOSIDONIA_EDITORIAL_CONTROL_URL . 'dist/js/settings/admin-settings-page.js',
+				CAMALOTEWP_EDITORIAL_CONTROL_URL . 'dist/js/settings/admin-settings-page.js',
 				$this->get_asset_info( 'settings/admin-settings-page', 'dependencies' ),
 				$this->get_asset_info( 'settings/admin-settings-page', 'version' ),
 				true
@@ -67,8 +67,8 @@ class AdminAssets implements ModuleInterface {
 			// Set up JavaScript translations
 			wp_set_script_translations(
 				$handle,
-				'revistaposidonia-editorial-control',
-				REVISTAPOSIDONIA_EDITORIAL_CONTROL_PATH . 'languages'
+				'camalotewp-editorial-control',
+				CAMALOTEWP_EDITORIAL_CONTROL_PATH . 'languages'
 			);
 		}
 
@@ -87,8 +87,8 @@ class AdminAssets implements ModuleInterface {
 			$deps = [];
 	
 			wp_enqueue_style(
-				'REVISTAPOSIDONIA_EDITORIAL_CONTROL_fotoperiodismo_admin_page_styles',
-				REVISTAPOSIDONIA_EDITORIAL_CONTROL_URL . 'dist/css/settings/admin-settings-page.css', // Note the corrected file name
+				'camalotewp_editorial_controlfotoperiodismo_admin_page_styles',
+				CAMALOTEWP_EDITORIAL_CONTROL_URL . 'dist/css/settings/admin-settings-page.css', // Note the corrected file name
 				$deps,
 				$this->get_asset_info( 'settings/admin-settings-page', 'version' ),
 			);

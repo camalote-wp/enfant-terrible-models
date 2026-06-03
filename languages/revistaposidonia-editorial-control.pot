@@ -2,8 +2,8 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Revista Posidonia Editorial Control 0.1.0\n"
-"Report-Msgid-Bugs-To: https://github.com/tingeka/revistaposidonia-editorial-control/issues\n"
+"Project-Id-Version: CamaloteWP Editorial Control 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/camalote-wp/cmlt-editorial-control/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,11 +12,11 @@ msgstr ""
 "POT-Creation-Date: 2025-08-27T18:10:55-03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
-"X-Domain: revistaposidonia-editorial-control\n"
+"X-Domain: cmlt-editorial-control\n"
 
 #. Plugin Name of the plugin
 #: plugin.php
-msgid "Revista Posidonia - Editorial Control"
+msgid "CamaloteWP - Editorial Control"
 msgstr ""
 
 #. Description of the plugin

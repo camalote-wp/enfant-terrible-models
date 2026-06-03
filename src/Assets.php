@@ -2,19 +2,19 @@
 /**
  * Global Assets module.
  *
- * @package RevistaPosidonia\EditorialControl
+ * @package CamaloteWP\EditorialControl
  */
 
-namespace RevistaPosidonia\EditorialControl;
+namespace CamaloteWP\EditorialControl;
 
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\Assets\GetAssetInfo;
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\Module;
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\ModuleInterface;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\Assets\GetAssetInfo;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\Module;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\ModuleInterface;
 
 /**
  * Global Assets module.
  *
- * @package RevistaPosidonia\EditorialControl
+ * @package CamaloteWP\EditorialControl
  */
 class Assets implements ModuleInterface {
 
@@ -37,8 +37,8 @@ class Assets implements ModuleInterface {
 	 */
 	public function register() {
 		$this->setup_asset_vars(
-			dist_path: REVISTAPOSIDONIA_EDITORIAL_CONTROL_PATH . 'dist/',
-			fallback_version: REVISTAPOSIDONIA_EDITORIAL_CONTROL_VERSION
+			dist_path: CAMALOTEWP_EDITORIAL_CONTROL_PATH . 'dist/',
+			fallback_version: CAMALOTEWP_EDITORIAL_CONTROL_VERSION
 		);
 
 		$this->register_admin_assets();
@@ -80,8 +80,8 @@ class Assets implements ModuleInterface {
 	 */
 	public function admin_block_editor_scripts() {		
 		wp_enqueue_script(
-			'REVISTAPOSIDONIA_EDITORIAL_CONTROL_admin',
-			REVISTAPOSIDONIA_EDITORIAL_CONTROL_URL . 'dist/js/block-filters.js',
+			'camalotewp_editorial_control_admin',
+			CAMALOTEWP_EDITORIAL_CONTROL_URL . 'dist/js/block-filters.js',
 			$this->get_asset_info( 'block-filters', 'dependencies' ),
 			$this->get_asset_info( 'block-filters', 'version' ),
 			true

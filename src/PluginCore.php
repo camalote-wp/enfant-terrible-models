@@ -2,17 +2,17 @@
 /**
  * PluginCore module.
  *
- * @package RevistaPosidonia\EditorialControl
+ * @package CamaloteWP\EditorialControl
  */
 
-namespace RevistaPosidonia\EditorialControl;
+namespace CamaloteWP\EditorialControl;
 
-use RevistaPosidonia\EditorialControl\Vendor\TenupFramework\ModuleInitialization;
+use CamaloteWP\EditorialControl\Vendor\TenupFramework\ModuleInitialization;
 
 /**
  * PluginCore module.
  *
- * @package RevistaPosidonia\EditorialControl
+ * @package CamaloteWP\EditorialControl
  */
 class PluginCore {
 
@@ -23,9 +23,9 @@ class PluginCore {
 	 */
 	public function setup() {
 		add_action( 'init', [ $this, 'i18n' ], 8 );
-		add_action( 'init', [ $this, 'init' ], apply_filters( 'revistaposidonia_editorial_control_init_priority', 8 ) );
+		add_action( 'init', [ $this, 'init' ], apply_filters( 'camalotewp_editorial_control_init_priority', 8 ) );
 
-		do_action( 'revistaposidonia_editorial_control_loaded' );
+		do_action( 'camalotewp_editorial_control_loaded' );
 	}
 
 	/**
@@ -34,9 +34,9 @@ class PluginCore {
 	 * @return void
 	 */
 	public function i18n() {
-		$locale = apply_filters( 'plugin_locale', get_locale(), 'revistaposidonia-editorial-control' );
-		load_textdomain( 'revistaposidonia-editorial-control', WP_LANG_DIR . '/revistaposidonia-editorial-control/revistaposidonia-editorial-control-' . $locale . '.mo' );
-		load_plugin_textdomain( 'revistaposidonia-editorial-control', false, plugin_basename( REVISTAPOSIDONIA_EDITORIAL_CONTROL_PATH ) . '/languages/' );
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'camalotewp-editorial-control' );
+		load_textdomain( 'camalotewp-editorial-control', WP_LANG_DIR . '/camalotewp-editorial-control/camalotewp-editorial-control-' . $locale . '.mo' );
+		load_plugin_textdomain( 'camalotewp-editorial-control', false, plugin_basename( CAMALOTEWP_EDITORIAL_CONTROL_PATH ) . '/languages/' );
 	}
 	/**
 	 * Initializes the plugin and fires an action other plugins can hook into.
@@ -44,9 +44,9 @@ class PluginCore {
 	 * @return void
 	 */
 	public function init() {
-		do_action( 'revistaposidonia_editorial_control_before_init' );
+		do_action( 'camalotewp_editorial_control_before_init' );
 
-		if ( ! class_exists( 'RevistaPosidonia\EditorialControl\Vendor\TenupFramework\ModuleInitialization' ) ) {
+		if ( ! class_exists( 'CamaloteWP\EditorialControl\Vendor\TenupFramework\ModuleInitialization' ) ) {
 			add_action(
 				'admin_notices',
 				function () {
@@ -58,7 +58,7 @@ class PluginCore {
 						wp_kses_post(
 							__(
 								'Please ensure the <a href="https://github.com/10up/wp-framework"><code>10up/wp-framework</code></a> composer package is installed.',
-								'enfantterrible-models'
+								'camalotewp-editorial-control'
 							)
 						)
 					);
@@ -67,11 +67,11 @@ class PluginCore {
 
 			return;
 		}
-		ModuleInitialization::instance()->init_classes( REVISTAPOSIDONIA_EDITORIAL_CONTROL_INC );
+		ModuleInitialization::instance()->init_classes( CAMALOTEWP_EDITORIAL_CONTROL_INC );
 
-		require_once REVISTAPOSIDONIA_EDITORIAL_CONTROL_PATH . 'src/Inc/GlobalHelpers.php';
+		require_once CAMALOTEWP_EDITORIAL_CONTROL_PATH . 'src/Inc/GlobalHelpers.php';
 		
-		do_action( 'revistaposidonia_editorial_control_init' );
+		do_action( 'camalotewp_editorial_control_init' );
 	}
 
 	/**
