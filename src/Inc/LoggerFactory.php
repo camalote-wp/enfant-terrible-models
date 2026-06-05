@@ -5,16 +5,16 @@
  * Provides methods to create and configure Monolog logger instances
  * with plugin-specific and global handlers.
  *
- * @package CamaloteWP\EditorialControl
+ * @package CamaloteWP\ZorzalModels\Inc
  */
 
-namespace CamaloteWP\EditorialControl\Inc;
+namespace CamaloteWP\ZorzalModels\Inc;
 
-use CamaloteWP\EditorialControl\Vendor\Monolog\Logger;
-use CamaloteWP\EditorialControl\Vendor\Monolog\Handler\StreamHandler;
-use CamaloteWP\EditorialControl\Vendor\Monolog\Handler\ErrorLogHandler;
-use CamaloteWP\EditorialControl\Vendor\Monolog\Processor\ProcessorInterface;
-use CamaloteWP\EditorialControl\Vendor\Monolog\Formatter\LineFormatter;
+use CamaloteWP\ZorzalModels\Vendor\Monolog\Logger;
+use CamaloteWP\ZorzalModels\Vendor\Monolog\Handler\StreamHandler;
+use CamaloteWP\ZorzalModels\Vendor\Monolog\Handler\ErrorLogHandler;
+use CamaloteWP\ZorzalModels\Vendor\Monolog\Processor\ProcessorInterface;
+use CamaloteWP\ZorzalModels\Vendor\Monolog\Formatter\LineFormatter;
 
 /**
  * LoggerFactory is responsible for creating and managing Monolog logger instances

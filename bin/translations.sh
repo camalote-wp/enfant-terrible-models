@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PLUGIN="camalote-wp-editorial-control"
+PLUGIN="camalote-wp-zorzal-models"
 PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LANG_DIR="$PLUGIN_ROOT/languages"
 POT_FILE="$LANG_DIR/${PLUGIN}.pot"
@@ -45,9 +45,9 @@ generate_pot() {
 
   wp i18n make-pot "$PLUGIN_ROOT" "$TMP_POT" \
     --domain="$PLUGIN" \
-    --package-name="CamaloteWP - Editorial Control" \
-    --headers='{"Report-Msgid-Bugs-To":"https://github.com/camalote-wp/editorial-control/issues"}'
-
+    --package-name="Camalote WP - Zorzal Models" \
+    --headers='{"Report-Msgid-Bugs-To":"https://github.com/camalote-wp/zorzal-models/issues"}' \
+    --include="dist"
   mv -f "$TMP_POT" "$POT_FILE"
 }
 
@@ -76,9 +76,10 @@ compile_mo_files() {
 }
 
 generate_json() {
-  log "Generating JSON files" "4/4"
-
-  wp i18n make-json "$LANG_DIR" --no-purge
+    log "Generating JSON files" "4/4"
+    wp i18n make-json "$LANG_DIR" "$LANG_DIR" \
+        --domain="$PLUGIN" \
+        --no-purge
 }
 
 add_locale() {

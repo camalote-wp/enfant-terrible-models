@@ -8,7 +8,7 @@ const TMP_DIR = path.resolve('tmp-plugin');
 
 // Read plugin name/version from package.json
 const packageJson = JSON.parse(fs.readFileSync(path.join(PLUGIN_ROOT, 'package.json')));
-const PLUGIN_NAME = packageJson.name || 'my-plugin';
+const PLUGIN_NAME = (packageJson.name || 'my-plugin').replace(/^@[^/]+\//, '');
 const VERSION = packageJson.version || '1.0.0';
 
 const ZIP_NAME = `${PLUGIN_NAME}-${VERSION}.zip`;

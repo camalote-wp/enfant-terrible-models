@@ -21,7 +21,7 @@ phpContent = phpContent.replace(
 
 // Update PHP constant
 phpContent = phpContent.replace(
-  /(define\s*\(\s*['"]CAMALOTE_WP_EDITORIAL_CONTROL_VERSION['"],\s*['"])[^'"]*(['"])/,
+  /(define\s*\(\s*['"]CAMALOTE_WP_DIRECT_MEDIA_PLACEMENT_VERSION['"],\s*['"])[^'"]*(['"])/,
   `$1${newVersion}$2`
 );
 

@@ -1,9 +1,9 @@
 {
-  "name": "camalote-wp/editorial-control",
+  "name": "camalote-wp/zorzal-models",
   "description": "Plugin for editorial control",
   "license": "MIT",
   "type": "wordpress-plugin",
-  "homepage": "https://github.com/camalote-wp/editorial-control",
+  "homepage": "https://github.com/camalote-wp/zorzal-models",
   "authors": [
     {
       "name": "Martín García"
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "CamaloteWP\\EditorialControl\\": "src/"
+      "CamaloteWP\\ZorzalModels\\": "src/"
     }
   },
   "require-dev": {

@@ -13,7 +13,7 @@ $excludesFunctions = json_decode(file_get_contents($wpExcludesFunctionsFile), tr
 $excludesConstants = json_decode(file_get_contents($wpExcludesConstantsFile), true);
 
 return [
-    'prefix' => 'CamaloteWP\\EditorialControl\\Vendor',
+    'prefix' => 'CamaloteWP\\ZorzalModels\\Vendor',
     'output-dir' => 'vendor-scoped',
     'finders' => [
         Isolated\Symfony\Component\Finder\Finder::create()

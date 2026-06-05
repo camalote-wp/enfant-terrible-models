@@ -2,18 +2,18 @@
 /**
  * Demo Post Type
  *
- * @package CamaloteWP\EditorialControl\Admin
+ * @package CamaloteWP\ZorzalModels\Admin
  */
 
 declare(strict_types = 1);
 
-namespace CamaloteWP\EditorialControl\Admin;
+namespace CamaloteWP\ZorzalModels\Admin;
 
-use CamaloteWP\EditorialControl\Vendor\TenupFramework\ModuleInterface;
-use CamaloteWP\EditorialControl\Vendor\TenupFramework\Module;
-use CamaloteWP\EditorialControl\Vendor\Monolog\Logger;
+use CamaloteWP\ZorzalModels\Vendor\TenupFramework\ModuleInterface;
+use CamaloteWP\ZorzalModels\Vendor\TenupFramework\Module;
+use CamaloteWP\ZorzalModels\Vendor\Monolog\Logger;
 
-use CamaloteWP\EditorialControl\Inc\LoggerFactory;
+use CamaloteWP\ZorzalModels\Inc\LoggerFactory;
 
 use WP_REST_Request;
 
@@ -24,9 +24,9 @@ class AdminSettings implements ModuleInterface {
     use Module;
 
     private const OPTION_GROUP = CAMALOTE_WP_VENDOR;
-    private const OPTION_NAME = CAMALOTE_WP_EDITORIAL_CONTROL_OPTION;
+    private const OPTION_NAME = CAMALOTE_WP_ZORZAL_MODELS_OPTION;
     
-    private const REST_BASE = CAMALOTE_WP_EDITORIAL_CONTROL_REST_NAMESPACE;
+    private const REST_BASE = CAMALOTE_WP_ZORZAL_MODELS_REST_NAMESPACE;
     private const REST_ROUTE = '/settings';
 
     /**

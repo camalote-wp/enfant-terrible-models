@@ -2,27 +2,27 @@
 /**
  * Global Assets module.
  *
- * @package CamaloteWP\EditorialControl
+ * @package CamaloteWP\ZorzalModels
  */
 
-namespace CamaloteWP\EditorialControl;
+namespace CamaloteWP\ZorzalModels;
 
-use CamaloteWP\EditorialControl\Vendor\TenupFramework\Assets\GetAssetInfo;
-use CamaloteWP\EditorialControl\Vendor\TenupFramework\Module;
-use CamaloteWP\EditorialControl\Vendor\TenupFramework\ModuleInterface;
+use CamaloteWP\ZorzalModels\Vendor\TenupFramework\Assets\GetAssetInfo;
+use CamaloteWP\ZorzalModels\Vendor\TenupFramework\Module;
+use CamaloteWP\ZorzalModels\Vendor\TenupFramework\ModuleInterface;
 
 /**
  * Global Assets module.
  *
- * @package CamaloteWP\EditorialControl
+ * @package CamaloteWP\ZorzalModels
  */
 class Assets implements ModuleInterface {
 
 	use Module;
 	use GetAssetInfo;
 
-	private const ASSETS_DIST_PATH = CAMALOTE_WP_EDITORIAL_CONTROL_PATH . 'dist/';
-	private const ASSETS_FALLBACK_VERSION = CAMALOTE_WP_EDITORIAL_CONTROL_VERSION;
+	private const ASSETS_DIST_PATH = CAMALOTE_WP_ZORZAL_MODELS_PATH . 'dist/';
+	private const ASSETS_FALLBACK_VERSION = CAMALOTE_WP_ZORZAL_MODELS_VERSION;
 
 	/**
 	 * Can this module be registered?
@@ -81,13 +81,5 @@ class Assets implements ModuleInterface {
 	 *
 	 * @return void
 	 */
-	public function admin_block_editor_scripts() {
-		wp_enqueue_script(
-			CAMALOTE_WP_EDITORIAL_CONTROL_SLUG . '_block-filters',
-			CAMALOTE_WP_EDITORIAL_CONTROL_URL . 'dist/js/block-filters.js',
-			$this->get_asset_info( 'block-filters', 'dependencies' ),
-			$this->get_asset_info( 'block-filters', 'version' ),
-			true
-		);
-	}
+	public function admin_block_editor_scripts() {}
 }

@@ -1,0 +1,76 @@
+# Copyright (C) 2026 Martín García
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Camalote WP - Zorzal Models 1.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/camalote-wp/zorzal-models/issues\n"
+"POT-Creation-Date: 2026-06-05T20:48:15-03:00\n"
+"PO-Revision-Date: 2026-06-05T19:40:04-03:00\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: camalote-wp-zorzal-models\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Plugin Name of the plugin
+#: plugin.php
+#, fuzzy
+msgid "Camalote WP - Editorial Control"
+msgstr "Camalote WP - Artículo de Portada"
+
+#. Description of the plugin
+#: plugin.php
+msgid ""
+"This plugin provides a dedicated settings page within the WordPress admin "
+"dashboard, where users can manage and configure various custom-made features "
+"and settings."
+msgstr ""
+
+#. Author of the plugin
+#: plugin.php
+msgid "Martín García"
+msgstr ""
+
+#. Author URI of the plugin
+#: plugin.php
+msgid "https://github.com/tingeka"
+msgstr ""
+
+#: dist/blocks/page/cover-article/i18n-filter.js:1
+msgid "Load more"
+msgstr "Cargar más"
+
+#: dist/blocks/page/cover-article/index.js:346
+msgid "Post selection"
+msgstr "Selección de post"
+
+#: dist/blocks/page/cover-article/index.js:346
+msgid "Select a post"
+msgstr "Selecciona un post"
+
+#: dist/blocks/page/cover-article/index.js:346
+msgid "You have selected the following item:"
+msgstr "Has seleccionado el siguiente item:"
+
+#: dist/blocks/page/cover-article/index.js:346
+#, fuzzy
+msgid "Camalote WP - Cover Article"
+msgstr "Camalote WP - Artículo de Portada"
+
+#: dist/blocks/page/cover-article/index.js:346
+msgid "Select a post in the sidebar."
+msgstr "Selecciona un post en la barra lateral."
+
+#: dist/blocks/page/cover-article/block.json
+msgctxt "block title"
+msgid "Camalote WP - Cover Article"
+msgstr "Camalote WP - Artículo de Portada"
+
+#: dist/blocks/page/cover-article/block.json
+msgctxt "block description"
+msgid "Cover Article."
+msgstr "Articulo de Portada."

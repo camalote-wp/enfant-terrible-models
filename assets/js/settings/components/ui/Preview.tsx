@@ -1,9 +1,0 @@
-// assets/js/settings/components/Preview.tsx
-interface PreviewProps {
-  className?: string;
-  children: React.ReactNode;
-};
-
-export const Preview = ({ className = '', children, ...props }: PreviewProps) => (
-  <div className={`rp-ecs-preview ${className}`} {...props}>{children}</div>
-);

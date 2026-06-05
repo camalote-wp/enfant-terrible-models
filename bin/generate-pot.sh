@@ -7,7 +7,7 @@ set -euo pipefail
 # Notes: Step-based logging for clarity in CI/CD
 # =============================================================================
 
-PLUGIN="camalote-wp-editorial-control"
+PLUGIN="camalote-wp-zorzal-models"
 PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TMP_POT="$(mktemp)"
 IDENTIFIER="POTGEN"
@@ -57,8 +57,8 @@ generate_pot() {
   log "Generating POT file" "2/3"
   wp i18n make-pot "$PLUGIN_ROOT" "$TMP_POT" \
     --domain="$PLUGIN" \
-    --package-name="CamaloteWP - Editorial Control" \
-    --headers='{"Report-Msgid-Bugs-To":"https://github.com/camalote-wp/editorial-control/issues"}'
+    --package-name="Camalote WP - Zorzal Models" \
+    --headers='{"Report-Msgid-Bugs-To":"https://github.com/camalote-wp/zorzal-models/issues"}'
 }
 
 finalize_pot() {

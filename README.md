@@ -30,13 +30,13 @@ This WordPress plugin provides an editorial control system. Its primary function
 
 #### Download a release
 
-- Navigate to [Releases](https://github.com/camalote-wp/editorial-control/releases)
+- Navigate to [Releases](https://github.com/camalote-wp/zorzal-models/releases)
 
 - Install via WordPress backend or copy into `wp-content/plugins/`.
 
 #### From source
 
-- Clone the repository:  `git clone https://github.com/camalote-wp/editorial-control.git`
+- Clone the repository:  `git clone https://github.com/camalote-wp/zorzal-models.git`
 
 - Install PHP dependencies: `composer install` 
 

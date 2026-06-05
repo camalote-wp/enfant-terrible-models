@@ -2,19 +2,19 @@
 /**
  * Gutenberg Blocks setup
  *
- * @package CamaloteWP\EditorialControl\Admin
+ * @package CamaloteWP\ZorzalModels\Admin
  */
 
-namespace CamaloteWP\EditorialControl\Admin;
+namespace CamaloteWP\ZorzalModels\Admin;
 
-use CamaloteWP\EditorialControl\Vendor\TenupFramework\Assets\GetAssetInfo;
-use CamaloteWP\EditorialControl\Vendor\TenupFramework\Module;
-use CamaloteWP\EditorialControl\Vendor\TenupFramework\ModuleInterface;
+use CamaloteWP\ZorzalModels\Vendor\TenupFramework\Assets\GetAssetInfo;
+use CamaloteWP\ZorzalModels\Vendor\TenupFramework\Module;
+use CamaloteWP\ZorzalModels\Vendor\TenupFramework\ModuleInterface;
 
 /**
  * AdminPage module.
  *
- * @package CamaloteWP\EditorialControl\Admin
+ * @package CamaloteWP\ZorzalModels\Admin
  */
 class AdminPage implements ModuleInterface {
 
@@ -30,8 +30,8 @@ class AdminPage implements ModuleInterface {
 
 	public function __construct() {
 		$args       = [
-			'page_title' => __( 'Editorial Control', CAMALOTE_WP_EDITORIAL_CONTROL_SLUG ),
-			'menu_title' => __( 'Editorial Control', CAMALOTE_WP_EDITORIAL_CONTROL_SLUG ),
+			'page_title' => __( 'Editorial Control', CAMALOTE_WP_ZORZAL_MODELS_SLUG ),
+			'menu_title' => __( 'Editorial Control', CAMALOTE_WP_ZORZAL_MODELS_SLUG ),
 			'capability' => 'manage_options',
 			'menu_slug'  => 'editorial-control-page',
 			'icon'       => 'dashicons-admin-generic',
@@ -52,8 +52,8 @@ class AdminPage implements ModuleInterface {
 	 */
 	public function register() {
 		$this->setup_asset_vars(
-			dist_path: CAMALOTE_WP_EDITORIAL_CONTROL_DIST_PATH,
-			fallback_version: CAMALOTE_WP_EDITORIAL_CONTROL_VERSION
+			dist_path: CAMALOTE_WP_ZORZAL_MODELS_DIST_PATH,
+			fallback_version: CAMALOTE_WP_ZORZAL_MODELS_VERSION
 		);
 
 		add_action( 'admin_menu', [ $this, 'register_admin_menu' ], 10 );
