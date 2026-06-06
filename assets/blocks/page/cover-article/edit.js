@@ -93,7 +93,7 @@ export const BlockEdit = ({ attributes, setAttributes }) => {
 					<ContentPicker
 						label={__("Select a post", "camalote-wp-zorzal-models")}
 						mode="post"
-						contentTypes={["post", "page"]}
+						contentTypes={["post"]}
 						maxContentItems={1}
 						content={pickedItems}
 						onPickChange={handlePickChange}
