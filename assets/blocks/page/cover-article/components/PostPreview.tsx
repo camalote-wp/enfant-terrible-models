@@ -50,7 +50,7 @@ export const PostPreview = ({ postLink, hasImage }: PostPreviewProps) => {
 						)
 					}
 				</PostAuthor>
-				<PostDate className="wp-block-camalote-wp-cover-article__date" placeholder={__('Date', 'camalote-wp-zorzal-models')} />
+				<PostDate className="wp-block-camalote-wp-cover-article__date" placeholder={__('No date', 'camalote-wp-zorzal-models')} />
 			</div>
 		</div>
 	</div>

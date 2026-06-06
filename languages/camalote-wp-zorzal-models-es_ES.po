@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Camalote WP - Zorzal Models 1.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/camalote-wp/zorzal-models/issues\n"
-"POT-Creation-Date: 2026-06-05T20:48:15-03:00\n"
+"POT-Creation-Date: 2026-06-06T20:57:07-03:00\n"
 "PO-Revision-Date: 2026-06-05T19:40:04-03:00\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -41,8 +41,13 @@ msgid "https://github.com/tingeka"
 msgstr ""
 
 #: dist/blocks/page/cover-article/i18n-filter.js:1
+#: dist/blocks/page/cover-article/i18n-filter.js:67
 msgid "Load more"
 msgstr "Cargar más"
+
+#: dist/blocks/page/cover-article/index.js:346
+msgid "No date"
+msgstr "Sin fecha"
 
 #: dist/blocks/page/cover-article/index.js:346
 msgid "Post selection"
@@ -74,3 +79,6 @@ msgstr "Camalote WP - Artículo de Portada"
 msgctxt "block description"
 msgid "Cover Article."
 msgstr "Articulo de Portada."
+
+#~ msgid "Date"
+#~ msgstr "Fecha"
