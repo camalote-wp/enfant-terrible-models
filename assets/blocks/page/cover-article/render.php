@@ -45,27 +45,30 @@ $thumbnail      = wp_get_attachment_image( $thumbnail_id, 'large', false, [
 ] );
 
 $wrapper_attributes = get_block_wrapper_attributes( [ 'class' => 'alignwide' ] );
+
+$inner_container_class = 'wp-block-camalote-wp-cover-article__inner' . ( $thumbnail ? ' wp-block-camalote-wp-cover-article__inner--has-image' : ' wp-block-camalote-wp-cover-article__inner--no-image' );
 ?>
 
 <div <?php echo $wrapper_attributes; ?>>
-    <div class="wp-block-camalote-wp-cover-article__inner">
-
+    <div class="<?php echo esc_attr( $inner_container_class ); ?>">
+        <php if ( $thumbnail ) : ?>
         <div class="wp-block-camalote-wp-cover-article__media">
             <a href="<?php echo esc_url( $post_link ); ?>" class="wp-block-camalote-wp-cover-article__image-link" tabindex="-1" aria-hidden="true">
                 <?php echo $thumbnail; ?>
             </a>
         </div>
+        <php endif; ?>
 
         <div class="wp-block-camalote-wp-cover-article__content">
-            <a href="<?php echo esc_url( $post_link ); ?>" class="wp-block-camalote-wp-cover-article__title-link">
-                <h1 class="wp-block-camalote-wp-cover-article__title"><?php echo esc_html( $post_title ); ?></h1>
-            </a>
+            <h1 class="wp-block-camalote-wp-cover-article__title wp-block-post-title">
+                <a href="<?php echo esc_url( $post_link ); ?>" class="wp-block-camalote-wp-cover-article__title-link">
+                    <?php echo esc_html( $post_title ); ?>
+                </a>
+            </h1>
             <div class="wp-block-camalote-wp-cover-article__meta">
-                <span class="wp-block-camalote-wp-cover-article__author">
-                    <a href="<?php echo esc_url( $author_link ); ?>" class="wp-block-camalote-wp-cover-article__author-link">
-                        <span class="wp-block-camalote-wp-cover-article__author-name"><?php echo esc_html( $author_name ); ?></span>
-                    </a>
-                </span>
+                <a href="<?php echo esc_url( $author_link ); ?>" class="wp-block-camalote-wp-cover-article__author-link">
+                    <?php echo esc_html( $author_name ); ?>
+                </a>
                 <time class="wp-block-camalote-wp-cover-article__date" datetime="<?php echo esc_attr( $post_date_iso ); ?>">
                     <?php echo esc_html( $post_date ); ?>
                 </time>

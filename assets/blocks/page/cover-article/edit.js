@@ -3,60 +3,10 @@ import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
 import { PanelBody, Placeholder, Spinner } from "@wordpress/components";
 import { useSelect } from "@wordpress/data";
 import { store as coreStore } from "@wordpress/core-data";
-import {
-	ContentPicker,
-	PostContext,
-	PostFeaturedImage,
-	PostTitle,
-	PostAuthor,
-	PostDate,
-} from "@10up/block-components";
-import "./editor.scss";
+import { ContentPicker, PostContext } from "@10up/block-components";
+import { PostPreview } from "./components/PostPreview.tsx";
 
-const PostPreview = ({ postLink }) => (
-	<div className="wp-block-camalote-wp-cover-article__inner">
-		<div className="wp-block-camalote-wp-cover-article__media">
-			<a
-				href={postLink}
-				className="wp-block-camalote-wp-cover-article__image-link"
-			>
-				<PostFeaturedImage className="wp-block-camalote-wp-cover-article__image" />
-			</a>
-		</div>
-		<div className="wp-block-camalote-wp-cover-article__content">
-			<a
-				href={postLink}
-				className="wp-block-camalote-wp-cover-article__title-link"
-			>
-				<PostTitle
-					tagName="h1"
-					className="wp-block-camalote-wp-cover-article__title"
-				/>
-			</a>
-			<div className="wp-block-camalote-wp-cover-article__meta">
-				<PostAuthor className="wp-block-camalote-wp-cover-article__author">
-					{(author) =>
-						author?.link ? (
-							<a
-								href={author.link}
-								className="wp-block-camalote-wp-cover-article__author-link"
-							>
-								<span className="wp-block-camalote-wp-cover-article__author-name">
-									{author.name}
-								</span>
-							</a>
-						) : (
-							<span className="wp-block-camalote-wp-cover-article__author-name">
-								{author.name}
-							</span>
-						)
-					}
-				</PostAuthor>
-				<PostDate className="wp-block-camalote-wp-cover-article__date" />
-			</div>
-		</div>
-	</div>
-);
+import "./editor.scss";
 
 export const BlockEdit = ({ attributes, setAttributes }) => {
 	const { selectedPost } = attributes;
@@ -123,7 +73,10 @@ export const BlockEdit = ({ attributes, setAttributes }) => {
 						postType={selectedPost.type ?? "post"}
 						isEditable={false}
 					>
-						<PostPreview postLink={post.link ?? null} />
+						<PostPreview
+							postLink={post.link ?? null}
+							hasImage={!!post.featured_media}
+						/>
 					</PostContext>
 				)}
 			</div>

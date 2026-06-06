@@ -1,5 +1,4 @@
 import { registerBlockType } from "@wordpress/blocks";
-import { addFilter } from "@wordpress/hooks";
 
 import { BlockEdit } from "./edit";
 import metadata from "./block.json";
