@@ -13,9 +13,3 @@ import * as wpElement from '@wordpress/element';
   element: wpElement, // full module, not destructured
   components: wpComponents,
 };
-
-// Mock block-editor minimally to avoid parsing ESM
-jest.mock('@wordpress/block-editor', () => ({
-  useBlockProps: () => ({}),
-  InnerBlocks: () => null,
-}));

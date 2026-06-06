@@ -13,9 +13,11 @@ module.exports = {
 		"^@10up/block-components$":
 			"<rootDir>/__tests__/mocks/tenupBlockComponentsMock.tsx",
 		"\\.(css|scss)$": "<rootDir>/__tests__/mocks/styleMock.tsx",
+		"^@wordpress/components$": "<rootDir>/__tests__/mocks/wpComponentsMock.tsx",
+		"^@wordpress/block-editor$": "<rootDir>/__tests__/mocks/wpBlockEditorMock.tsx",
 	},
 	transform: {
-		"^.+\\.tsx?$": [
+		"^.+\\.[jt]sx?$": [
 			"ts-jest",
 			{
 				tsconfig: "tsconfig.watch.json",

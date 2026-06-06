@@ -1,0 +1,1 @@
+export const MediaUpload = ({ render: renderProp }: any) => renderProp({ open: () => {} });
