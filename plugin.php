@@ -21,7 +21,7 @@ if( !defined( 'CAMALOTE_WP_VENDOR' ) ) {
 	define( 'CAMALOTE_WP_VENDOR', 'camalote-wp' );
 }
 define( 'CAMALOTE_WP_ZORZAL_MODELS_SLUG', 'camalote-wp-zorzal-models' );
-define( 'CAMALOTE_WP_ZORZAL_MODELS_REST_NAMESPACE', CAMALOTE_WP_VENDOR . '/editorial-control/v1' );
+define( 'CAMALOTE_WP_ZORZAL_MODELS_REST_NAMESPACE', CAMALOTE_WP_VENDOR . '/zorzal-models/v1' );
 define( 'CAMALOTE_WP_ZORZAL_MODELS_OPTION', 'camalote_wp_zorzal_models' );
 define( 'CAMALOTE_WP_ZORZAL_MODELS_VERSION', '1.0.0' );
 define( 'CAMALOTE_WP_ZORZAL_MODELS_URL', plugin_dir_url( __FILE__ ) );
