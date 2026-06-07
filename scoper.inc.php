@@ -52,5 +52,39 @@ return [
             }
             return $content;
         },
+
+        static function (string $filePath, string $prefix, string $content): string {
+            // Only target the specific files that need the helper rewrite
+            $isHelperFile = str_contains($filePath, 'illuminate') && str_contains($filePath, 'helpers.php');
+            $isSpatieResolver = str_contains($filePath, 'spatie') && str_contains($filePath, 'StructuresResolver.php');
+
+            if (!$isHelperFile && !$isSpatieResolver) {
+                return $content;
+            }
+
+            // Fix the function_exists checks in helpers.php
+            if ($isHelperFile) {
+                $content = preg_replace_callback(
+                    '/function_exists\s*\(\s*\'([^\']+)\'\s*\)/',
+                    function ($matches) use ($prefix) {
+                        return "function_exists('" . $prefix . "\\\\" . $matches[1] . "')";
+                    },
+                    $content
+                );
+                // Clean up any accidentally doubled prefixes or stray '$'
+                $content = str_replace('$\\' . $prefix, '\\' . $prefix, $content);
+            }
+
+            // Forcefully qualify collect() calls in Spatie
+            if ($isSpatieResolver) {
+                $content = preg_replace(
+                    '/(?<!->|::|function\s|use\sfunction\s)\bcollect\s*\(/',
+                    '\\' . $prefix . '\\collect(',
+                    $content
+                );
+            }
+
+            return $content;
+        },
     ],
 ];
