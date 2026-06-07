@@ -8,18 +8,24 @@ const TMP_DIR = path.resolve('tmp-plugin');
 
 // Read plugin name/version from package.json
 const packageJson = JSON.parse(fs.readFileSync(path.join(PLUGIN_ROOT, 'package.json')));
-const PLUGIN_NAME = (packageJson.name || 'my-plugin').replace(/^@[^/]+\//, '');
-const VERSION = packageJson.version || '1.0.0';
 
-const ZIP_NAME = `${PLUGIN_NAME}-${VERSION}.zip`;
+// Derive the scope (vendor) and the slug
+const packageName = packageJson.name || '@my-vendor/my-plugin';
+const [scope, slug] = packageName.replace('@', '').split('/');
+
+// This creates the prefixed name: camalote-wp-direct-media-placement
+const PREFIXED_NAME = `${scope}-${slug}`;
+const VERSION = packageJson.version || '1.0.0';
+ 
+const ZIP_NAME = `${PREFIXED_NAME}-${VERSION}.zip`;
 const ZIP_PATH = path.join(BUILD_DIR, ZIP_NAME);
 
-console.log(`Packaging plugin "${PLUGIN_NAME}" version ${VERSION}...`);
+console.log(`Packaging plugin "${PREFIXED_NAME}" version ${VERSION}...`);
 
 // Prepare temp folder
 if (fs.existsSync(TMP_DIR)) fs.rmSync(TMP_DIR, { recursive: true });
 fs.mkdirSync(TMP_DIR, { recursive: true });
-const zipFolder = path.join(TMP_DIR, PLUGIN_NAME);
+const zipFolder = path.join(TMP_DIR, PREFIXED_NAME);
 fs.mkdirSync(zipFolder, { recursive: true });
 
 // Files/directories to include
@@ -55,7 +61,7 @@ ITEMS.forEach(item => {
 if (!fs.existsSync(BUILD_DIR)) fs.mkdirSync(BUILD_DIR, { recursive: true });
 
 // Create zip via system command
-execSync(`cd "${TMP_DIR}" && zip -r "${ZIP_PATH}" "${PLUGIN_NAME}"`, { stdio: 'inherit' });
+execSync(`cd "${TMP_DIR}" && zip -r "${ZIP_PATH}" "${PREFIXED_NAME}"`, { stdio: 'inherit' });
 
 // Clean up temp folder
 fs.rmSync(TMP_DIR, { recursive: true });
