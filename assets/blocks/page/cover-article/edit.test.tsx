@@ -15,6 +15,7 @@ jest.mock("@wordpress/data", () => ({
 
 jest.mock("@wordpress/core-data", () => ({
   store: "core/core-data",
+  useEntityProp: jest.fn().mockReturnValue([null, jest.fn(), false]),
 }));
 
 describe("BlockEdit", () => {
@@ -54,19 +55,19 @@ describe("BlockEdit", () => {
   // --- Featured Image Branches ---
 
   test("renders the image element when the post has a featured image", () => {
-    setupActivePost({ id: 5, link: "http://site.test/my-post", featured_media_url: "http://site.test/image.jpg" });
+    setupActivePost({ id: 5, link: "http://site.test/my-post", featured_media: 123 });
     render(<BlockEdit attributes={{ selectedPost: { id: 5, type: "post" } }} setAttributes={setAttributes} />);
 
     const imageElement = screen.getByTestId("featured-image");
-    expect(imageElement).toHaveClass("has-image");
+    expect(imageElement).toBeInTheDocument();
   });
 
   test("renders the placeholder element when the post lacks a featured image", () => {
-    setupActivePost({ id: 5, link: "http://site.test/my-post", featured_media_url: null });
+    setupActivePost({ id: 5, link: "http://site.test/my-post", featured_media: 0 });
     render(<BlockEdit attributes={{ selectedPost: { id: 5, type: "post" } }} setAttributes={setAttributes} />);
 
-    const imageElement = screen.getByTestId("featured-image");
-    expect(imageElement).toHaveClass("block-editor-media-placeholder");
+    const imageElement = screen.queryByTestId("featured-image");
+    expect(imageElement).not.toBeInTheDocument();
   });
 
   // --- Author Element Branches ---

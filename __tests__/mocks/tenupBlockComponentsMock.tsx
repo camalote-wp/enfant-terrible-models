@@ -56,3 +56,5 @@ export const PostAuthor = ({ children, className }: any) => {
     </div>
   );
 };
+
+export const usePost = () => (global as any)._mockActivePost || null;
