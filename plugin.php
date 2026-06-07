@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Camalote WP - Editorial Control
  * Description:       This plugin provides a dedicated settings page within the WordPress admin dashboard, where users can manage and configure various custom-made features and settings.
- * Version:           1.1.0
+ * Version:           1.0.0
  * Requires at least: 4.9
  * Requires PHP:      8.2
  * Author:            Martín García
