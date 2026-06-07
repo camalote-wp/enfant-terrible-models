@@ -1,6 +1,6 @@
 {
   "name": "@camalote-wp/zorzal-models",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "npm run watch",
     "watch": "node bin/watch.js",

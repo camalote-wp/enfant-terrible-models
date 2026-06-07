@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/camalote-wp/zorzal-models/compare/v1.0.0...v1.0.1) (2026-06-07)
+
+
+### Bug Fixes
+
+* force release ([c5989d4](https://github.com/camalote-wp/zorzal-models/commit/c5989d4a20cc29064c1850d177569454df426ba9))
+
 # 1.0.0 (2026-06-07)
 
 
