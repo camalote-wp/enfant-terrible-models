@@ -33,6 +33,7 @@ define( 'CAMALOTE_WP_ZORZAL_MODELS_DIST_PATH', CAMALOTE_WP_ZORZAL_MODELS_PATH . 
 $is_local_env = in_array( wp_get_environment_type(), [ 'local', 'development' ], true );
 $is_local_url = strpos( home_url(), '.test' ) || strpos( home_url(), '.local' ) || strpos( home_url(), '.site' );
 $is_local     = $is_local_env || $is_local_url;
+$is_plugin_dev = $is_local && file_exists( __DIR__ . '/composer.json' );
 
 if ( $is_local && file_exists( __DIR__ . '/dist/fast-refresh.php' ) ) {
 	require_once __DIR__ . '/dist/fast-refresh.php';
@@ -47,7 +48,7 @@ if ( $is_local && file_exists( __DIR__ . '/dist/fast-refresh.php' ) ) {
 }
 
 // Only check for Composer autoload in local environments.
-if ( $is_local && ! file_exists( CAMALOTE_WP_ZORZAL_MODELS_PATH . 'vendor/autoload.php' ) ) {
+if ( $is_plugin_dev && ! file_exists( CAMALOTE_WP_ZORZAL_MODELS_PATH . 'vendor/autoload.php' ) ) {
 	throw new \Exception(
 		'Vendor autoload file not found. Please run `composer install`.'
 	);
