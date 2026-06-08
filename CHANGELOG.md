@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/camalote-wp/zorzal-models/compare/v1.0.2...v1.0.3) (2026-06-08)
+
+
+### Bug Fixes
+
+* add onClick handler to PostTitle component ([300bedc](https://github.com/camalote-wp/zorzal-models/commit/300bedc06bd910ff7dade13e73674f91293e0777))
+
 ## [1.0.2](https://github.com/camalote-wp/zorzal-models/compare/v1.0.1...v1.0.2) (2026-06-08)
 
 
