@@ -51,13 +51,13 @@ $inner_container_class = 'wp-block-camalote-wp-cover-article__inner' . ( $thumbn
 
 <div <?php echo $wrapper_attributes; ?>>
     <div class="<?php echo esc_attr( $inner_container_class ); ?>">
-        <php if ( $thumbnail ) : ?>
+        <?php if ( $thumbnail ) : ?>
         <div class="wp-block-camalote-wp-cover-article__media">
             <a href="<?php echo esc_url( $post_link ); ?>" class="wp-block-camalote-wp-cover-article__image-link" tabindex="-1" aria-hidden="true">
                 <?php echo $thumbnail; ?>
             </a>
         </div>
-        <php endif; ?>
+        <?php endif; ?>
 
         <div class="wp-block-camalote-wp-cover-article__content">
             <h1 class="wp-block-camalote-wp-cover-article__title wp-block-post-title">
