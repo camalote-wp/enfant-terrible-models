@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/camalote-wp/zorzal-models/compare/v1.0.1...v1.0.2) (2026-06-08)
+
+
+### Bug Fixes
+
+* correct PHP opening tag in cover article render ([668dfcb](https://github.com/camalote-wp/zorzal-models/commit/668dfcb191436e4ce234e79297a8e7d641e91562))
+
 ## [1.0.1](https://github.com/camalote-wp/zorzal-models/compare/v1.0.0...v1.0.1) (2026-06-07)
 
 
