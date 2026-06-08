@@ -31,6 +31,7 @@ export const PostPreview = ({ postLink, hasImage }: PostPreviewProps) => {
 					tagName="h1"
 					className="wp-block-camalote-wp-cover-article__title wp-block-post-title"
 					href={postLink}
+					onClick={handleClick}
 				/>
 			<div className="wp-block-camalote-wp-cover-article__meta">
 				<PostAuthor className="wp-block-camalote-wp-cover-article__author">

@@ -6,9 +6,10 @@ interface PostTitleProps {
     className?: string;
     href?: string;
     newTab?: boolean;
+    onClick?: React.MouseEventHandler<HTMLAnchorElement>; // <-- Just add this
 }
 
-export const PostTitle = ({ tagName: TagName = 'h1', href, newTab = false, ...rest }: PostTitleProps) => {
+export const PostTitle = ({ tagName: TagName = 'h1', href, newTab = false, onClick, ...rest }: PostTitleProps) => {
     const { postId, postType } = usePost();
     const [rawTitle = '', , fullTitle] = useEntityProp(
         'postType',
@@ -22,7 +23,7 @@ export const PostTitle = ({ tagName: TagName = 'h1', href, newTab = false, ...re
 
     return (
         <TagName {...rest}>
-            {href ? <a href={href} {...targetProps}>{title}</a> : title}
+            {href ? <a href={href} onClick={onClick} {...targetProps}>{title}</a> : title}
         </TagName>
     );
 };
