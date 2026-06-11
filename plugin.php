@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Camalote WP - Editorial Control
  * Description:       This plugin provides a dedicated settings page within the WordPress admin dashboard, where users can manage and configure various custom-made features and settings.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Requires at least: 4.9
  * Requires PHP:      8.2
  * Author:            Martín García
@@ -23,7 +23,7 @@ if( !defined( 'CAMALOTE_WP_VENDOR' ) ) {
 define( 'CAMALOTE_WP_ZORZAL_MODELS_SLUG', 'camalote-wp-zorzal-models' );
 define( 'CAMALOTE_WP_ZORZAL_MODELS_REST_NAMESPACE', CAMALOTE_WP_VENDOR . '/zorzal-models/v1' );
 define( 'CAMALOTE_WP_ZORZAL_MODELS_OPTION', 'camalote_wp_zorzal_models' );
-define( 'CAMALOTE_WP_ZORZAL_MODELS_VERSION', '1.0.3' );
+define( 'CAMALOTE_WP_ZORZAL_MODELS_VERSION', '1.0.4' );
 define( 'CAMALOTE_WP_ZORZAL_MODELS_URL', plugin_dir_url( __FILE__ ) );
 define( 'CAMALOTE_WP_ZORZAL_MODELS_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CAMALOTE_WP_ZORZAL_MODELS_INC', CAMALOTE_WP_ZORZAL_MODELS_PATH . 'src/' );

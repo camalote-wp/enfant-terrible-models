@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/camalote-wp/zorzal-models/compare/v1.0.3...v1.0.4) (2026-06-11)
+
+
+### Bug Fixes
+
+* fix mobile layout by inverting styles to mobile-first ([d17e27b](https://github.com/camalote-wp/zorzal-models/commit/d17e27b71bb3e097c43e51bb4ec33ac8347c5c30))
+
 ## [1.0.3](https://github.com/camalote-wp/zorzal-models/compare/v1.0.2...v1.0.3) (2026-06-08)
 
 
