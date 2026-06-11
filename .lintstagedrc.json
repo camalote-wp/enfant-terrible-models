@@ -1,5 +1,5 @@
 {
-  "*.css": ["10up-toolkit lint-style"],
+  "*.{css,scss}": ["10up-toolkit lint-style --fix"],
   "*.js": ["10up-toolkit lint-js"],
   "*.jsx": ["10up-toolkit lint-js"],
   "*.php": ["../../vendor/bin/phpcs"]
