@@ -8,45 +8,69 @@
 .wp-block-camalote-wp-cover-article__inner {
 	position: relative;
 
+	& .wp-block-camalote-wp-cover-article__image-link {
+		display: block;
+		width: 100%;
+	}
+
+	.wp-block-camalote-wp-cover-article__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		aspect-ratio: 16/9;
+		display: block;
+	}
+
 	& .wp-block-camalote-wp-cover-article__meta {
 		display: flex;
 		gap: var(--wp--style--block-gap);
 	}
 
-	&--has-image {
-		.wp-block-camalote-wp-cover-article__image {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			aspect-ratio: 16/9;
-			display: block;
-		}
-
-		.wp-block-camalote-wp-cover-article__content {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			padding: var(--wp--preset--spacing--50);
-			color: var(--wp--preset--color--white);
-		}
-
-		.wp-block-camalote-wp-cover-article__media {
-			aspect-ratio: 16/9;
-		}
-
-		.wp-block-camalote-wp-cover-article__media::after {
-			background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-			content: '';
-			position: absolute;
-			inset: 0;
-		}
+	& .wp-block-separator {
+		margin-top: var(--wp--preset--spacing--30)
 	}
+}
 
-	&--no-image {
-		/* Styles for when there is no image */
-		& .wp-block-camalote-wp-cover-article__content {
-			padding-top: var(--wp--preset--spacing--50);
-			padding-bottom: var(--wp--preset--spacing--50);
+@media screen and (min-width:782px) {
+	.wp-block-camalote-wp-cover-article__inner {
+
+		&--has-image {
+			.wp-block-camalote-wp-cover-article__content {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				padding: var(--wp--preset--spacing--50);
+				color: var(--wp--preset--color--white);
+			}
+
+			.wp-block-camalote-wp-cover-article__media {
+				aspect-ratio: 16/9;
+			}
+
+			.wp-block-camalote-wp-cover-article__media::after {
+				background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+				content: '';
+				position: absolute;
+				inset: 0;
+			}
+
+			& .wp-block-separator {
+				display: none;
+			}
+		}
+
+		&--no-image {
+
+			/* Styles for when there is no image */
+			& .wp-block-camalote-wp-cover-article__content {
+				padding-top: var(--wp--preset--spacing--50);
+				padding-bottom: var(--wp--preset--spacing--50);
+			}
+
+			& .wp-block-separator {
+				margin-top: unset;
+			}
+			
 		}
 	}
 }

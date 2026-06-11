@@ -66,14 +66,18 @@ $inner_container_class = 'wp-block-camalote-wp-cover-article__inner' . ( $thumbn
                 </a>
             </h1>
             <div class="wp-block-camalote-wp-cover-article__meta">
-                <a href="<?php echo esc_url( $author_link ); ?>" class="wp-block-camalote-wp-cover-article__author-link">
-                    <?php echo esc_html( $author_name ); ?>
-                </a>
-                <time class="wp-block-camalote-wp-cover-article__date" datetime="<?php echo esc_attr( $post_date_iso ); ?>">
-                    <?php echo esc_html( $post_date ); ?>
-                </time>
+                <div class="wp-block-post-author-name has-large-font-size">
+                    <a href="<?php echo esc_url( $author_link ); ?>" class="wp-block-camalote-wp-cover-article__author-link">
+                        <?php echo esc_html( $author_name ); ?>
+                    </a>
+                </div>
+                <div class="wp-block-post-date has-large-font-size">
+                    <time class="wp-block-camalote-wp-cover-article__date" datetime="<?php echo esc_attr( $post_date_iso ); ?>">
+                        <?php echo esc_html( $post_date ); ?>
+                    </time>
+                </div>
             </div>
         </div>
-
+        <hr class="wp-block-separator has-alpha-channel-opacity" />
     </div>
 </div>
