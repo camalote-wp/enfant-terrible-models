@@ -10,15 +10,11 @@
  * @subpackage Et_Models/admin
  */
 
-namespace EnfantTerrible\Models\Definitions\Page;
+namespace EnfantTerrible\Models\Definitions\ArticulosInvitados;
 
-use EnfantTerrible\Models\Abstracts\AbstractBootstrap;
+use EnfantTerrible\Models\Vendor\CamaloteWP\Models\Abstracts\AbstractBootstrap;
 
-use EnfantTerrible\Models\Definitions\Page\PostType;
-use EnfantTerrible\Models\Definitions\Page\Meta;
-use EnfantTerrible\Models\Definitions\Page\Blocks;
-use EnfantTerrible\Models\Definitions\Page\View;
-use EnfantTerrible\Models\Definitions\Page\Rest;
+use EnfantTerrible\Models\Definitions\ArticulosInvitados\PostType;
 
 /**
  * The admin-specific functionality of the plugin.
@@ -39,7 +35,7 @@ class Bootstrap extends AbstractBootstrap {
 	 * @access   protected
 	 * @var      string    $model_name    The name of the model.
 	 */
-	protected string $model_name = 'page';
+	protected string $model_name = 'articulos-invitados';
 
 	/**
 	 * Retrieves the components to be registered for the model.
@@ -49,7 +45,7 @@ class Bootstrap extends AbstractBootstrap {
 	 */
 	public function get_components(): array {
 		return [
-			Blocks::class
+			PostType::class,
 		];
 	}
 }

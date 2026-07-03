@@ -14,7 +14,10 @@
  */
 
 namespace EnfantTerrible\Models\Core;
-use EnfantTerrible\Models\Core\Loader;
+
+use EnfantTerrible\Models\Vendor\CamaloteWP\Models\Core\BootstrapRunner;
+use EnfantTerrible\Models\Vendor\CamaloteWP\Models\Core\Loader;
+
 use EnfantTerrible\Models\Core\I18n;
 use EnfantTerrible\Models\Core\Activator;
 use EnfantTerrible\Models\Core\Deactivator;
@@ -66,6 +69,15 @@ class Plugin {
 	protected $version;
 
 	/**
+	 * The runner that orchestrates the loading of all definitions.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      BootstrapRunner    $runner    Orchestrates the loading of all definitions.
+	 */
+	protected BootstrapRunner $runner;
+
+	/**
 	 * Define the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
@@ -99,6 +111,7 @@ class Plugin {
 	 */
 	private function load_dependencies() {
 		$this->loader = new Loader();
+		$this->runner = new BootstrapRunner( $this->loader );
 	}
 
 	/**
@@ -130,46 +143,11 @@ class Plugin {
 	 */
 	private function load_definitions(): void {
 		$models = [
-			// \EnfantTerrible\Models\Definitions\Example\Bootstrap::class,
-			\EnfantTerrible\Models\Definitions\Page\Bootstrap::class
+			\EnfantTerrible\Models\Definitions\ArticulosInvitados\Bootstrap::class
 		];
 
-		foreach ( $models as $class_name ) {
-			$bootstrap = new $class_name( $this->plugin_name, $this->version );
-
-			// Auto-instantiate Components
-			if ( method_exists( $bootstrap, 'get_components' ) ) {
-				foreach ( $bootstrap->get_components() as $component_class ) {
-					
-					// INSTANTIATE
-					$instance = new $component_class( $bootstrap->get_model_name() );
-					
-					
-					// REGISTER (Defer to init to fix Fatal Error)
-					if ( $instance instanceof Registerable ) {
-						$this->loader->add_action( 'init', $instance, 'register' );
-					}
-					
-					
-					// HOOKS
-					if ( $instance instanceof Hookable ) {
-						foreach ( $instance->get_hooks() as $hook ) {
-							if ( ! isset( $hook['type'], $hook['hook'], $hook['callback'] ) ) {
-								continue;
-							}
-							$method = ( $hook['type'] === 'filter' ) ? 'add_filter' : 'add_action';
-							$this->loader->$method(
-								$hook['hook'],
-								$instance,
-								$hook['callback'],
-								$hook['priority'] ?? 10,
-								$hook['accepted_args'] ?? 1
-							);
-						}
-					}
-				}
-			}
-		}
+		$this->runner->register( $models );
+		
 	}
 
 	public function enqueue_global_assets(): void {

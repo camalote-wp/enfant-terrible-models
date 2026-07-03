@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "003f0810206a1f8a36df0ece5cd9e912",
+    "content-hash": "092ddf520732bb8ca0db4a90ae9affcd",
     "packages": [
         {
             "name": "10up/wp-framework",
@@ -67,6 +67,46 @@
                 "source": "https://github.com/10up/wp-framework/tree/1.2.3"
             },
             "time": "2025-05-06T13:00:08+00:00"
+        },
+        {
+            "name": "camalote-wp/models",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/camalote-wp/models.git",
+                "reference": "6ad42741abe77976d5f6cde67f08330c350d0584"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/camalote-wp/models/zipball/6ad42741abe77976d5f6cde67f08330c350d0584",
+                "reference": "6ad42741abe77976d5f6cde67f08330c350d0584",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CamaloteWP\\Models\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Martín García",
+                    "email": "tin.geka@gmail.com"
+                }
+            ],
+            "description": "CamaloteWP Models provides abstract base classes for registering WordPress content models (post types, taxonomies, metadata, blocks).",
+            "support": {
+                "issues": "https://github.com/camalote-wp/models/issues",
+                "source": "https://github.com/camalote-wp/models/tree/v0.2.0"
+            },
+            "time": "2026-07-03T20:40:51+00:00"
         },
         {
             "name": "illuminate/collections",
