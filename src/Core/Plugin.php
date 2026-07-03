@@ -16,6 +16,8 @@
 namespace EnfantTerrible\Models\Core;
 use EnfantTerrible\Models\Core\Loader;
 use EnfantTerrible\Models\Core\I18n;
+use EnfantTerrible\Models\Core\Activator;
+use EnfantTerrible\Models\Core\Deactivator;
 use EnfantTerrible\Models\Interfaces\Registerable;
 use EnfantTerrible\Models\Interfaces\Hookable;
 
@@ -152,13 +154,16 @@ class Plugin {
 					// HOOKS
 					if ( $instance instanceof Hookable ) {
 						foreach ( $instance->get_hooks() as $hook ) {
+							if ( ! isset( $hook['type'], $hook['hook'], $hook['callback'] ) ) {
+								continue;
+							}
 							$method = ( $hook['type'] === 'filter' ) ? 'add_filter' : 'add_action';
 							$this->loader->$method(
 								$hook['hook'],
 								$instance,
 								$hook['callback'],
-								$hook['priority'],
-								$hook['accepted_args']
+								$hook['priority'] ?? 10,
+								$hook['accepted_args'] ?? 1
 							);
 						}
 					}
@@ -213,6 +218,14 @@ class Plugin {
 	 */
 	public function get_version() {
 		return $this->version;
+	}
+
+	public static function activate(): void {
+		Activator::activate();
+	}
+
+	public static function deactivate(): void {
+		Deactivator::deactivate();
 	}
 
 }
