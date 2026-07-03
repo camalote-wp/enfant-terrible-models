@@ -13,8 +13,8 @@ const packageJson = JSON.parse(fs.readFileSync(path.join(PLUGIN_ROOT, 'package.j
 const packageName = packageJson.name || '@my-vendor/my-plugin';
 const [scope, slug] = packageName.replace('@', '').split('/');
 
-// This creates the prefixed name: camalote-wp-direct-media-placement
-const PREFIXED_NAME = `${scope}-${slug}`;
+// This creates the prefixed name: enfant-terrible-models
+const PREFIXED_NAME = `${slug}`;
 const VERSION = packageJson.version || '1.0.0';
  
 const ZIP_NAME = `${PREFIXED_NAME}-${VERSION}.zip`;

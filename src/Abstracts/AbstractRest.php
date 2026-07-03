@@ -1,8 +1,8 @@
 <?php
 
-namespace CamaloteWP\ZorzalModels\Abstracts;
+namespace EnfantTerrible\Models\Abstracts;
 
-use CamaloteWP\ZorzalModels\Interfaces\Hookable;
+use EnfantTerrible\Models\Interfaces\Hookable;
 
 abstract class AbstractRest implements Hookable {
     protected string $model_name;

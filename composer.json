@@ -1,9 +1,9 @@
 {
-  "name": "camalote-wp/zorzal-models",
+  "name": "camalote-wp/enfant-terrible-models",
   "description": "Plugin for editorial control",
   "license": "MIT",
   "type": "wordpress-plugin",
-  "homepage": "https://github.com/camalote-wp/zorzal-models",
+  "homepage": "https://github.com/camalote-wp/enfant-terrible-models",
   "authors": [
     {
       "name": "Martín García"
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "CamaloteWP\\ZorzalModels\\": "src/"
+      "EnfantTerrible\\Models\\": "src/"
     }
   },
   "require-dev": {

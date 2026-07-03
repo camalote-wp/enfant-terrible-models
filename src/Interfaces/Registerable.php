@@ -1,6 +1,6 @@
 <?php
 
-namespace CamaloteWP\ZorzalModels\Interfaces;
+namespace EnfantTerrible\Models\Interfaces;
 
 interface Registerable {
     public function register();

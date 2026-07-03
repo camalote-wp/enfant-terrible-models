@@ -10,15 +10,15 @@
  * @subpackage Et_Models/admin
  */
 
-namespace CamaloteWP\ZorzalModels\Definitions\Page;
+namespace EnfantTerrible\Models\Definitions\Page;
 
-use CamaloteWP\ZorzalModels\Abstracts\AbstractBootstrap;
+use EnfantTerrible\Models\Abstracts\AbstractBootstrap;
 
-use CamaloteWP\ZorzalModels\Definitions\Page\PostType;
-use CamaloteWP\ZorzalModels\Definitions\Page\Meta;
-use CamaloteWP\ZorzalModels\Definitions\Page\Blocks;
-use CamaloteWP\ZorzalModels\Definitions\Page\View;
-use CamaloteWP\ZorzalModels\Definitions\Page\Rest;
+use EnfantTerrible\Models\Definitions\Page\PostType;
+use EnfantTerrible\Models\Definitions\Page\Meta;
+use EnfantTerrible\Models\Definitions\Page\Blocks;
+use EnfantTerrible\Models\Definitions\Page\View;
+use EnfantTerrible\Models\Definitions\Page\Rest;
 
 /**
  * The admin-specific functionality of the plugin.

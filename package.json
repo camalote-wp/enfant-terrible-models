@@ -1,5 +1,5 @@
 {
-  "name": "@camalote-wp/zorzal-models",
+  "name": "@camalote-wp/enfant-terrible-models",
   "version": "1.0.4",
   "scripts": {
     "start": "npm run watch",

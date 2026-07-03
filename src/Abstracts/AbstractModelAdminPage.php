@@ -1,9 +1,9 @@
 <?php
-namespace CamaloteWP\ZorzalModels\Abstracts;
+namespace EnfantTerrible\Models\Abstracts;
 
-use CamaloteWP\ZorzalModels\Interfaces\Hookable;
-use CamaloteWP\ZorzalModels\Interfaces\AdminPage;
-use CamaloteWP\ZorzalModels\Core\AdminPageRegistrar;
+use EnfantTerrible\Models\Interfaces\Hookable;
+use EnfantTerrible\Models\Interfaces\AdminPage;
+use EnfantTerrible\Models\Core\AdminPageRegistrar;
 
 abstract class AbstractModelAdminPage implements Hookable, AdminPage {
     protected string $model_name;

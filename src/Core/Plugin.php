@@ -9,15 +9,15 @@
  * @link       https://github.com/tingeka
  * @since      1.0.0
  *
- * @package    CamaloteWP/ZorzalModels
- * @subpackage CamaloteWP/ZorzalModels/includes
+ * @package    EnfantTerrible/Models
+ * @subpackage EnfantTerrible/Models/includes
  */
 
-namespace CamaloteWP\ZorzalModels\Core;
-use CamaloteWP\ZorzalModels\Core\Loader;
-use CamaloteWP\ZorzalModels\Core\I18n;
-use CamaloteWP\ZorzalModels\Interfaces\Registerable;
-use CamaloteWP\ZorzalModels\Interfaces\Hookable;
+namespace EnfantTerrible\Models\Core;
+use EnfantTerrible\Models\Core\Loader;
+use EnfantTerrible\Models\Core\I18n;
+use EnfantTerrible\Models\Interfaces\Registerable;
+use EnfantTerrible\Models\Interfaces\Hookable;
 
 /**
  * The core plugin class.
@@ -29,8 +29,8 @@ use CamaloteWP\ZorzalModels\Interfaces\Hookable;
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    CamaloteWP/ZorzalModels
- * @subpackage CamaloteWP/ZorzalModels/includes
+ * @package    EnfantTerrible/Models
+ * @subpackage EnfantTerrible/Models/includes
  * @author     Martín García <tin.geka@gmail.com>
  */
 class Plugin {
@@ -73,12 +73,12 @@ class Plugin {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'CAMALOTE_WP_ZORZAL_MODELS_VERSION' ) ) {
-			$this->version = CAMALOTE_WP_ZORZAL_MODELS_VERSION;
+		if ( defined( 'ENFANT_TERRIBLE_MODELS_VERSION' ) ) {
+			$this->version = ENFANT_TERRIBLE_MODELS_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'camalote-wp-zorzal-models';
+		$this->plugin_name = 'enfant-terrible-models';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -128,8 +128,8 @@ class Plugin {
 	 */
 	private function load_definitions(): void {
 		$models = [
-			// \CamaloteWP\ZorzalModels\Definitions\Example\Bootstrap::class,
-			\CamaloteWP\ZorzalModels\Definitions\Page\Bootstrap::class
+			// \EnfantTerrible\Models\Definitions\Example\Bootstrap::class,
+			\EnfantTerrible\Models\Definitions\Page\Bootstrap::class
 		];
 
 		foreach ( $models as $class_name ) {
@@ -172,7 +172,7 @@ class Plugin {
 	}
 
 	public function enqueue_assets(): void {
-		wp_enqueue_style( 'camalote-wp-zorzal-models-shared-styles', CAMALOTE_WP_ZORZAL_MODELS_URL . 'assets/build/shared/index.css' );
+		wp_enqueue_style( 'enfant-terrible-models-shared-styles', ENFANT_TERRIBLE_MODELS_URL . 'assets/build/shared/index.css' );
 	}
 
 	/**

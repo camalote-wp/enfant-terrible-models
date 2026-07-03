@@ -6,11 +6,11 @@
  * @link       https://github.com/tingeka
  * @since      1.0.0
  *
- * @package    CamaloteWP/ZorzalModels
- * @subpackage CamaloteWP/ZorzalModels/includes
+ * @package    EnfantTerrible/Models
+ * @subpackage EnfantTerrible/Models/includes
  */
 
-namespace CamaloteWP\ZorzalModels\Core;
+namespace EnfantTerrible\Models\Core;
 
 /**
  * Fired during plugin activation.
@@ -18,8 +18,8 @@ namespace CamaloteWP\ZorzalModels\Core;
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    CamaloteWP/ZorzalModels
- * @subpackage CamaloteWP/ZorzalModels/includes
+ * @package    EnfantTerrible/Models
+ * @subpackage EnfantTerrible/Models/includes
  * @author     Martín García <tin.geka@gmail.com>
  */
 class Activator {

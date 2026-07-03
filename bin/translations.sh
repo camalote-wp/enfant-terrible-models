@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PLUGIN="camalote-wp-zorzal-models"
+PLUGIN="enfant-terrible-models"
 PLUGIN_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LANG_DIR="$PLUGIN_ROOT/languages"
 POT_FILE="$LANG_DIR/${PLUGIN}.pot"
@@ -45,8 +45,7 @@ generate_pot() {
 
   wp i18n make-pot "$PLUGIN_ROOT" "$TMP_POT" \
     --domain="$PLUGIN" \
-    --package-name="Camalote WP - Zorzal Models" \
-    --headers='{"Report-Msgid-Bugs-To":"https://github.com/camalote-wp/zorzal-models/issues"}' \
+    --headers='{"Report-Msgid-Bugs-To":"https://github.com/camalote-wp/enfant-terrible-models/issues"}' \
     --include="dist"
   mv -f "$TMP_POT" "$POT_FILE"
 }

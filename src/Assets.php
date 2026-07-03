@@ -2,27 +2,27 @@
 /**
  * Global Assets module.
  *
- * @package CamaloteWP\ZorzalModels
+ * @package EnfantTerrible\Models
  */
 
-namespace CamaloteWP\ZorzalModels;
+namespace EnfantTerrible\Models;
 
-use CamaloteWP\ZorzalModels\Vendor\TenupFramework\Assets\GetAssetInfo;
-use CamaloteWP\ZorzalModels\Vendor\TenupFramework\Module;
-use CamaloteWP\ZorzalModels\Vendor\TenupFramework\ModuleInterface;
+use EnfantTerrible\Models\Vendor\TenupFramework\Assets\GetAssetInfo;
+use EnfantTerrible\Models\Vendor\TenupFramework\Module;
+use EnfantTerrible\Models\Vendor\TenupFramework\ModuleInterface;
 
 /**
  * Global Assets module.
  *
- * @package CamaloteWP\ZorzalModels
+ * @package EnfantTerrible\Models
  */
 class Assets implements ModuleInterface {
 
 	use Module;
 	use GetAssetInfo;
 
-	private const ASSETS_DIST_PATH = CAMALOTE_WP_ZORZAL_MODELS_PATH . 'dist/';
-	private const ASSETS_FALLBACK_VERSION = CAMALOTE_WP_ZORZAL_MODELS_VERSION;
+	private const ASSETS_DIST_PATH = ENFANT_TERRIBLE_MODELS_PATH . 'dist/';
+	private const ASSETS_FALLBACK_VERSION = ENFANT_TERRIBLE_MODELS_VERSION;
 
 	/**
 	 * Can this module be registered?

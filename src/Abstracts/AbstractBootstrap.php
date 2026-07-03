@@ -1,6 +1,6 @@
 <?php
 
-namespace CamaloteWP\ZorzalModels\Abstracts;
+namespace EnfantTerrible\Models\Abstracts;
 
 abstract class AbstractBootstrap {
 

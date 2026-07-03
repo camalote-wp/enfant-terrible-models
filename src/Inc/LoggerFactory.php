@@ -5,16 +5,16 @@
  * Provides methods to create and configure Monolog logger instances
  * with plugin-specific and global handlers.
  *
- * @package CamaloteWP\ZorzalModels\Inc
+ * @package EnfantTerrible\Models\Inc
  */
 
-namespace CamaloteWP\ZorzalModels\Inc;
+namespace EnfantTerrible\Models\Inc;
 
-use CamaloteWP\ZorzalModels\Vendor\Monolog\Logger;
-use CamaloteWP\ZorzalModels\Vendor\Monolog\Handler\StreamHandler;
-use CamaloteWP\ZorzalModels\Vendor\Monolog\Handler\ErrorLogHandler;
-use CamaloteWP\ZorzalModels\Vendor\Monolog\Processor\ProcessorInterface;
-use CamaloteWP\ZorzalModels\Vendor\Monolog\Formatter\LineFormatter;
+use EnfantTerrible\Models\Vendor\Monolog\Logger;
+use EnfantTerrible\Models\Vendor\Monolog\Handler\StreamHandler;
+use EnfantTerrible\Models\Vendor\Monolog\Handler\ErrorLogHandler;
+use EnfantTerrible\Models\Vendor\Monolog\Processor\ProcessorInterface;
+use EnfantTerrible\Models\Vendor\Monolog\Formatter\LineFormatter;
 
 /**
  * LoggerFactory is responsible for creating and managing Monolog logger instances

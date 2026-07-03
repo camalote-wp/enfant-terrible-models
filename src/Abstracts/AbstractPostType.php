@@ -1,8 +1,8 @@
 <?php 
 
-namespace CamaloteWP\ZorzalModels\Abstracts;
+namespace EnfantTerrible\Models\Abstracts;
 
-use CamaloteWP\ZorzalModels\Interfaces\Registerable;
+use EnfantTerrible\Models\Interfaces\Registerable;
 
 abstract class AbstractPostType implements Registerable {
     protected string $model_name;

@@ -9,11 +9,11 @@
  * @link       https://github.com/tingeka
  * @since      1.0.0
  *
- * @package    CamaloteWP/ZorzalModels
- * @subpackage CamaloteWP/ZorzalModels/includes
+ * @package    EnfantTerrible/Models
+ * @subpackage EnfantTerrible/Models/includes
  */
 
-namespace CamaloteWP\ZorzalModels\Core;
+namespace EnfantTerrible\Models\Core;
 
 /**
  * Define the internationalization functionality.
@@ -22,8 +22,8 @@ namespace CamaloteWP\ZorzalModels\Core;
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    CamaloteWP/ZorzalModels
- * @subpackage CamaloteWP/ZorzalModels/includes
+ * @package    EnfantTerrible/Models
+ * @subpackage EnfantTerrible/Models/includes
  * @author     Martín García <tin.geka@gmail.com>
  */
 class I18n {

@@ -1,8 +1,8 @@
 <?php
 
-namespace CamaloteWP\ZorzalModels\Definitions\Page;
+namespace EnfantTerrible\Models\Definitions\Page;
 
-use CamaloteWP\ZorzalModels\Abstracts\AbstractBlocks;
+use EnfantTerrible\Models\Abstracts\AbstractBlocks;
 
 final class Blocks extends AbstractBlocks {
 

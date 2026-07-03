@@ -6,11 +6,11 @@
  * @link       https://github.com/tingeka
  * @since      1.0.0
  *
- * @package    CamaloteWP/ZorzalModels
- * @subpackage CamaloteWP/ZorzalModels/includes
+ * @package    EnfantTerrible/Models
+ * @subpackage EnfantTerrible/Models/includes
  */
 
-namespace CamaloteWP\ZorzalModels\Core;
+namespace EnfantTerrible\Models\Core;
 
 /**
  * Register all actions and filters for the plugin.
@@ -19,8 +19,8 @@ namespace CamaloteWP\ZorzalModels\Core;
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    CamaloteWP/ZorzalModels
- * @subpackage CamaloteWP/ZorzalModels/includes
+ * @package    EnfantTerrible/Models
+ * @subpackage EnfantTerrible/Models/includes
  * @author     Martín García <tin.geka@gmail.com>
  */
 class Loader {
