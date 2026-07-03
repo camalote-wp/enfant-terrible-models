@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Enfant Terrible - Models
  * Description:       This plugin provides a dedicated settings page within the WordPress admin dashboard, where users can manage and configure various custom-made features and settings.
- * Version:           1.0.4
+ * Version:           0.2.0
  * Requires at least: 4.9
  * Requires PHP:      8.2
  * Author:            Martín García
@@ -23,7 +23,7 @@ if( !defined( 'ENFANT_TERRIBLE_VENDOR' ) ) {
 define( 'ENFANT_TERRIBLE_MODELS_SLUG', 'enfant-terrible-models' );
 define( 'ENFANT_TERRIBLE_MODELS_REST_NAMESPACE', ENFANT_TERRIBLE_VENDOR . '/models/v1' );
 define( 'ENFANT_TERRIBLE_MODELS_OPTION', 'enfant_terrible_models' );
-define( 'ENFANT_TERRIBLE_MODELS_VERSION', '1.0.4' );
+define( 'ENFANT_TERRIBLE_MODELS_VERSION', '0.2.0' );
 define( 'ENFANT_TERRIBLE_MODELS_URL', plugin_dir_url( __FILE__ ) );
 define( 'ENFANT_TERRIBLE_MODELS_PATH', plugin_dir_path( __FILE__ ) );
 define( 'ENFANT_TERRIBLE_MODELS_INC', ENFANT_TERRIBLE_MODELS_PATH . 'src/' );

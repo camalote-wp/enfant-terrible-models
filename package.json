@@ -1,6 +1,6 @@
 {
   "name": "@camalote-wp/enfant-terrible-models",
-  "version": "1.0.4",
+  "version": "0.2.0",
   "scripts": {
     "start": "npm run watch",
     "watch": "node bin/watch.js",
